@@ -21,3 +21,6 @@ Headsup requires Python (should work on 2.x and 3.x) as well as the BeautifulSou
 Pending a UI release, all optional settings must be changed through the setHeaders.py file, but here's a list of things you can change:
 - header: defines the div id that you use to enclose your header in both the template and project pages (default: "header")
 - sourceHeaderName: defines the template HTML document that you use as source for header to be applied (default: "template.html")
+
+Once you've changed these to your liking, drop the setHeaders.py script into your project's folder, and run it from a terminal. It'll update every .html document in the directory (unless included in the blacklist - read below for more on this) to include the template header, if it finds a header div at all.
+Every time you change your header in the template document, you should rerun the script to have your changes reflected in the project.

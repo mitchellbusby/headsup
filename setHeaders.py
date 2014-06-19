@@ -19,11 +19,12 @@ for htmlFile in htmlFiles:
 	#get current header on page
 	currentHeader = doc.find("div", {"id":headerTag})
 	#yolo
-	currentHeader.replace_with(headerToBeApplied)
-	#Reopens file so it can be rewritten and not just appended to!
-	g = open(htmlFile, 'w')
-	g.write(unicode(doc))
-	g.close()
+	if currentHeader: #check if there is actually a header in the document!
+		currentHeader.replace_with(headerToBeApplied)
+		#Reopens file so it can be rewritten and not just appended to!
+		g = open(htmlFile, 'w')
+		g.write(unicode(doc))
+		g.close()
 
 
 
